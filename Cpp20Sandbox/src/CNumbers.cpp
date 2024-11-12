@@ -23,7 +23,7 @@ void CNumbers::Execute()
         printf("    No it's %d\n", check);
     }
     
-    // Binary literals.
+    // Digit Separators.
     printf("  1'234'567 is probably 1234567:\n");
     check = 1'234'567;
     if (check == 1234567)

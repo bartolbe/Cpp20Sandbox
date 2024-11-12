@@ -15,6 +15,11 @@
 class CObjects : public IBlock
 {
 public:
+    virtual ~CObjects() = default;
+    
+    virtual void Execute() override;
+    
+private:
     struct Parent
     {
         struct Child
@@ -28,10 +33,6 @@ public:
         Child child;
         int p2;
     };
-    
-    virtual ~CObjects() = default;
-    
-    virtual void Execute() override;
 };
 
 #endif /* CObjects_hpp */
