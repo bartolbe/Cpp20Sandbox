@@ -7,12 +7,12 @@
 
 #include "CMain.hpp"
 
-#include "CBinaryLiteral.hpp"
+#include "CNumbers.hpp"
 
 void CMain::Execute()
 {
     static const std::unique_ptr<IBlock> s_blocks[] = {
-        std::make_unique<CBinaryLiteral>()
+        std::make_unique<CNumbers>()
     };
     
     for (auto &block : s_blocks)
