@@ -8,6 +8,7 @@
 #include "CMain.hpp"
 
 #include "CFunctions.hpp"
+#include "CLambdas.hpp"
 #include "CNumbers.hpp"
 #include "CObjects.hpp"
 
@@ -15,6 +16,7 @@ void CMain::Execute()
 {
     static const std::unique_ptr<IBlock> s_blocks[] = {
         std::make_unique<CFunctions>(),
+        std::make_unique<CLambdas>(),
         std::make_unique<CNumbers>(),
         std::make_unique<CObjects>()
     };
