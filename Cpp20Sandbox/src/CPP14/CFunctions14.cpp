@@ -1,23 +1,23 @@
 //
-//  CFunctions.cpp
+//  CFunctions14.cpp
 //  Cpp20Sandbox
 //
 //  Created by Joey Pape on 2024-11-12.
 //
 
-#include "CFunctions.hpp"
+#include "CFunctions14.hpp"
 
 static auto StaticFunction()
 {
     return false;
 }
 
-auto CFunctions::MemberFunction()
+auto CFunctions14::MemberFunction()
 {
     return true;
 }
 
-void CFunctions::Execute()
+void CFunctions14::Execute()
 {
     printf("=== Functions ===\n");
     if (MemberFunction())
@@ -27,6 +27,6 @@ void CFunctions::Execute()
     
     if (!StaticFunction())
     {
-        printf("  Auto detected static function type.\n");        
+        printf("  Auto detected static function type.\n");
     }
 }

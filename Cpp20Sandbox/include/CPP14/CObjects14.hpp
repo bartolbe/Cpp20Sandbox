@@ -1,21 +1,21 @@
 //
-//  CObjects.hpp
+//  CObjects14.hpp
 //  Cpp20Sandbox
 //
 //  Created by Joey Pape on 2024-11-12.
 //
 
-#ifndef CObjects_hpp
-#define CObjects_hpp
+#ifndef CObjects14_hpp
+#define CObjects14_hpp
 
 #include "IBlock.hpp"
 
 #include <stdio.h>
 
-class CObjects : public IBlock
+class CObjects14 : public IBlock
 {
 public:
-    virtual ~CObjects() = default;
+    virtual ~CObjects14() = default;
     
     virtual void Execute() override;
     
@@ -35,4 +35,4 @@ private:
     };
 };
 
-#endif /* CObjects_hpp */
+#endif /* CObjects14_hpp */

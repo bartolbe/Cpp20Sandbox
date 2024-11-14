@@ -1,23 +1,23 @@
 //
-//  CLambdas.hpp
+//  CLambdas14.hpp
 //  Cpp20Sandbox
 //
 //  Created by Joey Pape on 2024-11-13.
 //
 
-#ifndef CLambdas_hpp
-#define CLambdas_hpp
+#ifndef CLambdas14_hpp
+#define CLambdas14_hpp
 
 #include "IBlock.hpp"
 
 #include <stdio.h>
 
-class CLambdas : public IBlock
+class CLambdas14 : public IBlock
 {
 public:
-    virtual ~CLambdas() = default;
+    virtual ~CLambdas14() = default;
     
     virtual void Execute() override;
 };
 
-#endif /* CLambdas_hpp */
+#endif /* CLambdas14_hpp */

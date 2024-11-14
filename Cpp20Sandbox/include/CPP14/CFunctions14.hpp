@@ -1,21 +1,21 @@
 //
-//  CFunctions.hpp
+//  CFunctions14.hpp
 //  Cpp20Sandbox
 //
 //  Created by Joey Pape on 2024-11-12.
 //
 
-#ifndef CFunctions_hpp
-#define CFunctions_hpp
+#ifndef CFunctions14_hpp
+#define CFunctions14_hpp
 
 #include "IBlock.hpp"
 
 #include <stdio.h>
 
-class CFunctions : public IBlock
+class CFunctions14 : public IBlock
 {
 public:
-    virtual ~CFunctions() = default;
+    virtual ~CFunctions14() = default;
     
     virtual void Execute() override;
     
@@ -23,4 +23,4 @@ private:
     auto MemberFunction();
 };
 
-#endif /* CFunctions_hpp */
+#endif /* CFunctions14_hpp */
