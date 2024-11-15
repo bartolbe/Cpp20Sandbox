@@ -7,27 +7,26 @@
 
 #include "CCoroutines20.hpp"
 
-CCoroutines20::ReturnObject CCoroutines20::CoroutineTest(int32_t initialVavlue, std::coroutine_handle<> *continuation_out)
+CCoroutines20::ReturnObject CCoroutines20::CoroutineTest(int32_t initialVavlue)
 {
-    Awaiter awaiter{continuation_out};
+    auto awaiter = std::suspend_always{};
     for (int32_t i = initialVavlue;; ++i)
     {
         co_await awaiter;
-        printf("  CoroutineTest: initial: %d, current: %d\n", initialVavlue, i);
+        printf("  CoroutineTest - initial: %d, current: %d\n", initialVavlue, i);
     }
 }
 
 void CCoroutines20::Execute()
 {
     static const int32_t intialValue = 7;
-    std::coroutine_handle<> handle;
     
-    CoroutineTest(intialValue, &handle);
+    CCoroutines20::ReturnObject returnObject = CoroutineTest(intialValue);
     
     for (int i = 0; i < 3; ++i)
     {
         printf("Execute %d\n", i);
-        handle();
+        returnObject.handle();
     }
-    handle.destroy();
+    returnObject.handle.destroy();
 }

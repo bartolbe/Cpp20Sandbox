@@ -25,24 +25,29 @@ private:
     {
         struct promise_type
         {
-            ReturnObject get_return_object() { return {}; }
+            ReturnObject get_return_object()
+            {
+                return { std::coroutine_handle<promise_type>::from_promise(*this) };
+            };
+
             std::suspend_never initial_suspend() { return {}; }
             std::suspend_never final_suspend() noexcept { return {}; }
             void unhandled_exception() {}
         };
-    };
-
-    struct Awaiter
-    {
-        std::coroutine_handle<> *hp_;
         
-        // Whether the coroutine should suspend.
-        constexpr bool await_ready() const noexcept { return false; }
-        void await_suspend(std::coroutine_handle<> h) { *hp_ = h; }
-        constexpr void await_resume() const noexcept {}
+        std::coroutine_handle<promise_type> handle;
     };
 
-    ReturnObject CoroutineTest(int32_t initialVavlue, std::coroutine_handle<> *continuation_out);
+    // No need for a specialized awaiter with the handle stored in the return object.
+    /*struct Awaiter
+    {
+        // Returns whether the coroutine should suspend.
+        constexpr bool await_ready() const noexcept { return false; }
+        void await_suspend(std::coroutine_handle<> h) {}
+        constexpr void await_resume() const noexcept {}
+    };*/
+
+    ReturnObject CoroutineTest(int32_t initialVavlue);
 };
 
 #endif /* CCoroutines20 */
