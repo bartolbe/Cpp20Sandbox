@@ -12,13 +12,18 @@
 #include "CNumbers14.hpp"
 #include "CObjects14.hpp"
 
+#include "CCoroutines20.hpp"
+
 void CMain::Execute()
 {
     static const std::unique_ptr<IBlock> s_blocks[] = {
-        std::make_unique<CFunctions14>(),
-        std::make_unique<CLambdas14>(),
-        std::make_unique<CNumbers14>(),
-        std::make_unique<CObjects14>()
+        //std::make_unique<CFunctions14>(),
+        //std::make_unique<CLambdas14>(),
+        //std::make_unique<CNumbers14>(),
+        //std::make_unique<CObjects14>(),
+        
+        std::make_unique<CCoroutines20>()
+        
     };
     
     for (auto &block : s_blocks)
